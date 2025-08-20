@@ -1,13 +1,7 @@
 "use client";
 
-import { MenuIcon } from "lucide-react";
+import { CodeIcon, DotIcon, Gem, MenuIcon, SlidersHorizontalIcon, Workflow } from "lucide-react";
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -25,77 +19,88 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import Image from "next/image";
+
+import {
+  Card,
+  CardContent
+} from "@/components/ui/card";
 
 const Navbar5 = () => {
   const features = [
     {
-      title: "Dashboard",
-      description: "Overview of your activity",
+      icon: <SlidersHorizontalIcon className="size-6 text-red-600" />,
+      bg: "bg-red-100",
+      title: "Website Maintenance",
+      description: "Keep your website running smoothly and securely.",
       href: "#",
     },
     {
-      title: "Analytics",
-      description: "Track your performance",
+      icon: <CodeIcon className="size-6 text-yellow-600" />,
+      bg: "bg-yellow-100",
+      title: "Website & App Development",
+      description: "Transform your online presence with our custom platform design solutions.",
       href: "#",
     },
     {
-      title: "Settings",
-      description: "Configure your preferences",
+      icon: <Workflow className="size-6 text-emerald-600" />,
+      bg: "bg-emerald-100",
+      title: "IT Support",
+      description: "Experience peace of mind with our reliable IT support services.",
       href: "#",
     },
     {
-      title: "Integrations",
-      description: "Connect with other tools",
-      href: "#",
-    },
-    {
-      title: "Storage",
-      description: "Manage your files",
-      href: "#",
-    },
-    {
-      title: "Support",
-      description: "Get help when needed",
+      icon: <Gem className="size-6 text-pink-600" />,
+      bg: "bg-pink-100",
+      title: "3rd Party AI Solution",
+      description: "Leverage our expertise to find the best third-party AI services for your business.",
       href: "#",
     },
   ];
 
   return (
-    <section className="py-4">
-      <div className="container mx-auto px-4">
-        <nav className="flex items-center justify-between">
+    <section className="py-4 text-[#153147]">
+      <div className="container">
+        <nav className="flex items-center justify-between fixed top-0 left-0 w-full bg-white shadow-md z-10 px-28 py-2">
           <a
-            href="https://www.shadcnblocks.com"
+            href="https://labsco2.com/"
             className="flex items-center gap-2"
           >
-            <img
-              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg"
-              className="max-h-8"
-              alt="Shadcn UI Navbar"
+            <Image
+              src="/labsco2/logo.png"
+              className="max-h-16"
+              alt="labsco2"
+              width={64}
+              height={64}
             />
-            <span className="text-lg font-semibold tracking-tighter">
-              Shadcnblocks.com
-            </span>
           </a>
           <NavigationMenu className="hidden lg:block">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Features</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="cursor-pointer font-bold text-[16px]">Our Services</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid w-[600px] grid-cols-2 p-3">
+                  <div className="grid w-[800px] grid-cols-2 p-3">
                     {features.map((feature, index) => (
                       <NavigationMenuLink
                         href={feature.href}
                         key={index}
                         className="rounded-md p-3 transition-colors hover:bg-muted/70"
                       >
-                        <div key={feature.title}>
-                          <p className="mb-1 font-semibold text-foreground">
-                            {feature.title}
-                          </p>
-                          <p className="text-sm text-muted-foreground">
-                            {feature.description}
-                          </p>
+                        <div key={feature.title} className="flex justify-between items-center gap-4">
+                          <Card className={feature.bg}>
+                            <CardContent>
+                              <span>{feature.icon}</span>
+                            </CardContent>
+                          </Card>
+                          <div>
+                            <p className="mb-1 font-semibold text-foreground text-[16px]">
+                              {feature.title}
+                            </p>
+                            <p className="text-sm text-muted-foreground">
+                              {feature.description}
+                            </p>
+                          </div>
+
                         </div>
                       </NavigationMenuLink>
                     ))}
@@ -107,7 +112,7 @@ const Navbar5 = () => {
                   href="#"
                   className={navigationMenuTriggerStyle()}
                 >
-                  Products
+                  <span className="text-[16px]">About Us</span>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -115,7 +120,7 @@ const Navbar5 = () => {
                   href="#"
                   className={navigationMenuTriggerStyle()}
                 >
-                  Resources
+                  <span className="text-[16px]">Portfolio</span>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -123,81 +128,67 @@ const Navbar5 = () => {
                   href="#"
                   className={navigationMenuTriggerStyle()}
                 >
-                  Contact
+                  <span className="text-[16px]">Contact</span>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
           <div className="hidden items-center gap-4 lg:flex">
-            <Button variant="outline">Sign in</Button>
-            <Button>Start for free</Button>
+            {/* <Button variant="outline">Sign in</Button> */}
+            <Button className="bg-[#153147] text-[16px]">Get Started Today!</Button>
           </div>
           <Sheet>
             <SheetTrigger asChild className="lg:hidden">
-              <Button variant="outline" size="icon">
-                <MenuIcon className="h-4 w-4" />
+              <Button variant="ghost" size="icon" className="cursor-pointer">
+                <MenuIcon className="size-6" />
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="max-h-screen overflow-auto">
               <SheetHeader>
                 <SheetTitle>
-                  <a
-                    href="https://www.shadcnblocks.com"
-                    className="flex items-center gap-2"
-                  >
-                    <img
-                      src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg"
-                      className="max-h-8"
-                      alt="Shadcn UI Navbar"
-                    />
-                    <span className="text-lg font-semibold tracking-tighter">
-                      Shadcnblocks.com
-                    </span>
-                  </a>
+                  {""}
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col p-4">
-                <Accordion type="single" collapsible className="mt-4 mb-2">
-                  <AccordionItem value="solutions" className="border-none">
-                    <AccordionTrigger className="text-base hover:no-underline">
-                      Features
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <div className="grid md:grid-cols-2">
-                        {features.map((feature, index) => (
-                          <a
-                            href={feature.href}
-                            key={index}
-                            className="rounded-md p-3 transition-colors hover:bg-muted/70"
-                          >
-                            <div key={feature.title}>
-                              <p className="mb-1 font-semibold text-foreground">
-                                {feature.title}
-                              </p>
-                              <p className="text-sm text-muted-foreground">
-                                {feature.description}
-                              </p>
-                            </div>
-                          </a>
-                        ))}
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
                 <div className="flex flex-col gap-6">
                   <a href="#" className="font-medium">
-                    Templates
+                    Our Services
+                  </a>
+                  <span className="flex flex-col">
+                    <a href="#">
+                      <Button variant="ghost" size="sm">
+                        <DotIcon className="size-6" /> <span className="underline cursor-pointer">Website Maintenance</span>
+                      </Button>
+                    </a>
+                    <a href="#">
+                      <Button variant="ghost" size="sm">
+                        <DotIcon className="size-6" /> <span className="underline cursor-pointer">Website & App Development</span>
+                      </Button>
+                    </a>
+                    <a href="#">
+                      <Button variant="ghost" size="sm">
+                        <DotIcon className="size-6" /> <span className="underline cursor-pointer">IT Support</span>
+                      </Button>
+                    </a>
+                    <a href="#">
+                      <Button variant="ghost" size="sm">
+                        <DotIcon className="size-6" /> <span className="underline cursor-pointer">3rd Party AI Solution</span>
+                      </Button>
+                    </a>
+                  </span>
+                  <a href="#" className="font-medium">
+                    About Us
                   </a>
                   <a href="#" className="font-medium">
-                    Blog
+                    Portfolio
                   </a>
                   <a href="#" className="font-medium">
-                    Pricing
+                    Contact Us
                   </a>
                 </div>
                 <div className="mt-6 flex flex-col gap-4">
-                  <Button variant="outline">Sign in</Button>
-                  <Button>Start for free</Button>
+                  {/* <Button variant="outline">Sign in</Button> */}
+                  <Button className="bg-[#153147] text-[16px]">Get Started Today!</Button>
                 </div>
               </div>
             </SheetContent>

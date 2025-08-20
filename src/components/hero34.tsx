@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero34 = () => {
   return (
-    <section>
+    <section id="about">
       <div className="container mx-auto">
         <div className="bg-muted grid items-center gap-8 lg:grid-cols-2">
           <div className="flex flex-col items-center p-16 text-center lg:items-start lg:text-left">

@@ -7,12 +7,18 @@ import Navbar from "@/components/custom/navbar";
 import Portfolio from "@/components/custom/portfolio";
 import Services from "@/components/custom/services";
 import Team from "@/components/custom/team";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+
+import { DM_Sans } from "next/font/google";
+
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export default function Home() {
   return (
-    <>
+    <main className={`${dmSans.variable} font-sans`}>
       <Navbar />
       <Hero />
       <Services />
@@ -22,6 +28,6 @@ export default function Home() {
       <Portfolio />
       <Contact />
       <Footer />
-    </>
+    </main>
   );
 }
