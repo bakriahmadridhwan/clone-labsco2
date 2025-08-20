@@ -1,6 +1,6 @@
 "use client";
 
-import { CodeIcon, DotIcon, Gem, MenuIcon, SlidersHorizontalIcon, Workflow } from "lucide-react";
+import { CodeXmlIcon, DotIcon, Gem, MenuIcon, SlidersHorizontalIcon, Workflow } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -36,7 +36,7 @@ const Navbar5 = () => {
       href: "#",
     },
     {
-      icon: <CodeIcon className="size-6 text-yellow-600" />,
+      icon: <CodeXmlIcon className="size-6 text-yellow-600" />,
       bg: "bg-yellow-100",
       title: "Website & App Development",
       description: "Transform your online presence with our custom platform design solutions.",
@@ -61,7 +61,7 @@ const Navbar5 = () => {
   return (
     <section className="py-4 text-[#153147]">
       <div className="container">
-        <nav className="flex items-center justify-between fixed top-0 left-0 w-full bg-white shadow-md z-10 px-28 py-2">
+        <nav className="flex items-center justify-between fixed top-0 left-0 w-full bg-white shadow-md z-[999] px-28 py-2">
           <a
             href="https://labsco2.com/"
             className="flex items-center gap-2"
