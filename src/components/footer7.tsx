@@ -1,5 +1,17 @@
+"use client"
+
+import FormInput from '@/components/common/form-input';
+import {
+  Form
+} from '@/components/ui/form';
+import { INITIAL_SUBSCRIPTION_FORM } from "@/constants/auth-constant";
+import { SubscribeForm, subscribeSchema } from "@/validations/auth-validation";
+import { zodResolver } from '@hookform/resolvers/zod';
 import React from "react";
+// import { useForm } from 'react-hook-form';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Button } from './ui/button';
+import { useForm } from 'react-hook-form';
 
 interface Footer7Props {
   logo?: {
@@ -27,30 +39,29 @@ interface Footer7Props {
 
 const defaultSections = [
   {
-    title: "Product",
+    title: "Services",
     links: [
-      { name: "Overview", href: "#" },
-      { name: "Pricing", href: "#" },
-      { name: "Marketplace", href: "#" },
-      { name: "Features", href: "#" },
+      { name: "Web Maintenance", href: "#" },
+      { name: "Web & App Development", href: "#" },
+      { name: "IT Service", href: "#" },
+      { name: "3rd Party AI Solution", href: "#" },
     ],
   },
   {
-    title: "Company",
+    title: "About",
     links: [
-      { name: "About", href: "#" },
-      { name: "Team", href: "#" },
+      { name: "Our Approach", href: "#" },
+      { name: "Our Team", href: "#" },
       { name: "Blog", href: "#" },
-      { name: "Careers", href: "#" },
+      { name: "Our Portfolio", href: "#" },
     ],
   },
   {
-    title: "Resources",
+    title: "Contact",
     links: [
-      { name: "Help", href: "#" },
-      { name: "Sales", href: "#" },
-      { name: "Advertise", href: "#" },
-      { name: "Privacy", href: "#" },
+      { name: "+65-8118-1595", href: "#" },
+      { name: "info@co2labs.com", href: "#" },
+      { name: "100D Pasir Panjang Road", href: "#" },
     ],
   },
 ];
@@ -63,64 +74,70 @@ const defaultSocialLinks = [
 ];
 
 const defaultLegalLinks = [
-  { name: "Terms and Conditions", href: "#" },
-  { name: "Privacy Policy", href: "#" },
+  { name: "FAQ", href: "#" },
+  { name: "Terms & Policy", href: "#" },
 ];
 
 const Footer7 = ({
   logo = {
-    url: "https://www.shadcnblocks.com",
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg",
+    url: "#",
+    src: "",
     alt: "logo",
-    title: "Shadcnblocks.com",
+    title: "Let’s Grow With CO2 Labs",
   },
   sections = defaultSections,
-  description = "A collection of components for your startup business or side project.",
+  description = "Get Exclusive Updates From Us",
   socialLinks = defaultSocialLinks,
-  copyright = "© 2024 Shadcnblocks.com. All rights reserved.",
+  copyright = "© 2024 CO2 Labs. All rights reserved.",
   legalLinks = defaultLegalLinks,
 }: Footer7Props) => {
+
+  const form = useForm<SubscribeForm>({
+    resolver: zodResolver(subscribeSchema),
+    defaultValues: INITIAL_SUBSCRIPTION_FORM,
+  });
+
+  const onSubmit = form.handleSubmit(async (data) => {
+    console.log(data);
+  });
+
   return (
-    <section className="py-32">
-      <div className="px-20">
+    <section className="pt-32 bg-[#141516]">
+      <div className="px-28">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
             {/* Logo */}
-            <div className="flex items-center gap-2 lg:justify-start">
-              <a href={logo.url}>
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  title={logo.title}
-                  className="h-8"
-                />
-              </a>
-              <h2 className="text-xl font-semibold">{logo.title}</h2>
+            <div className="lg:justify-start">
+              <h2 className="text-3xl font-black text-white">{logo.title}</h2>
+              <h2 className="text-xl font-semibold text-white mt-2">{description}</h2>
             </div>
-            <p className="text-muted-foreground max-w-[70%] text-sm">
-              {description}
-            </p>
-            <ul className="text-muted-foreground flex items-center space-x-6">
-              {socialLinks.map((social, idx) => (
-                <li key={idx} className="hover:text-primary font-medium">
-                  <a href={social.href} aria-label={social.label}>
-                    {social.icon}
-                  </a>
-                </li>
-              ))}
-            </ul>
+
+            <div className='flex items-center'>
+              <Form {...form}>
+                <form onSubmit={onSubmit} className="">
+                  <FormInput
+                    form={form}
+                    name="email"
+                    placeholder="Insert email here"
+                    type="email"
+                  />
+                </form>
+                <Button type="submit" className='cursor-pointer bg-[#EAB308] text-black font-bold rounded-r-full h-10'>Subscribe</Button>
+              </Form>
+            </div>
+
           </div>
           <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
             {sections.map((section, sectionIdx) => (
               <div key={sectionIdx}>
-                <h3 className="mb-4 font-bold">{section.title}</h3>
+                <h3 className="mb-4 font-bold text-white">{section.title}</h3>
                 <ul className="text-muted-foreground space-y-3 text-sm">
                   {section.links.map((link, linkIdx) => (
                     <li
                       key={linkIdx}
                       className="hover:text-primary font-medium"
                     >
-                      <a href={link.href}>{link.name}</a>
+                      <a href={link.href} className="text-muted-foreground hover:text-white">{link.name}</a>
                     </li>
                   ))}
                 </ul>

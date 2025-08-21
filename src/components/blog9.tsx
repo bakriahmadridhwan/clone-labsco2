@@ -108,8 +108,7 @@ const Blog9 = ({
                 <Image
                   src={post.image}
                   alt={post.title}
-                  objectFit="cover"
-                  className="rounded-lg cursor-pointer"
+                  className="rounded-lg cursor-pointer bg-cover"
                   width={500}
                   height={500}
                 />
