@@ -40,7 +40,7 @@ const Hero1 = ({
 }: Hero1Props) => {
   return (
     <section className="py-32 min-h-screen flex justify-center items-center">
-      <div className="container mx-auto h-full">
+      <div className="container mx-auto h-full gap-2 lg:px-28">
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <h1 className={`text-pretty text-3xl font-bold lg:text-5xl ${orbitron.className}`}>

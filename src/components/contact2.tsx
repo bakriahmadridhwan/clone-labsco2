@@ -4,6 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Orbitron } from "next/font/google";
+import { MailIcon, PhoneIcon, PinIcon } from "lucide-react";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+
+const orbitron = Orbitron({ subsets: ["latin"] });
 
 interface Contact2Props {
   title?: string;
@@ -18,67 +23,73 @@ const Contact2 = ({
   description = "We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!",
   phone = "(123) 34567890",
   email = "email@example.com",
-  web = { label: "shadcnblocks.com", url: "https://shadcnblocks.com" },
+  web = { label: "label", url: "#" },
 }: Contact2Props) => {
   return (
     <section className="py-32">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-10 lg:flex-row lg:gap-20">
-          <div className="mx-auto flex max-w-sm flex-col justify-between gap-10">
-            <div className="text-center lg:text-left">
-              <h1 className="mb-2 text-5xl font-semibold lg:mb-1 lg:text-6xl">
-                {title}
-              </h1>
-              <p className="text-muted-foreground">{description}</p>
-            </div>
-            <div className="mx-auto w-fit lg:mx-0">
-              <h3 className="mb-6 text-center text-2xl font-semibold lg:text-left">
-                Contact Details
-              </h3>
-              <ul className="ml-4 list-disc">
-                <li>
-                  <span className="font-bold">Phone: </span>
-                  {phone}
-                </li>
-                <li>
-                  <span className="font-bold">Email: </span>
-                  <a href={`mailto:${email}`} className="underline">
-                    {email}
-                  </a>
-                </li>
-                <li>
-                  <span className="font-bold">Web: </span>
-                  <a href={web.url} target="_blank" className="underline">
-                    {web.label}
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="mx-auto flex max-w-3xl flex-col gap-6 rounded-lg border p-10">
-            <div className="flex gap-4">
-              <div className="grid w-full items-center gap-1.5">
-                <Label htmlFor="firstname">First Name</Label>
-                <Input type="text" id="firstname" placeholder="First Name" />
-              </div>
-              <div className="grid w-full items-center gap-1.5">
-                <Label htmlFor="lastname">Last Name</Label>
-                <Input type="text" id="lastname" placeholder="Last Name" />
-              </div>
+      <div className="container mx-auto flex flex-col gap-2 lg:px-28">
+        <div className="flex justify-between items-center">
+          <h2 className={`mt-5 text-3xl font-semibold text-pretty md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl text-black ${orbitron.className}`}>
+            Contact Us
+          </h2>
+          <span className="flex items-center gap-12 text-black">
+            <a href="#">
+              <PinIcon size={25} />
+            </a>
+            <a href={`mailto:${email}`}>
+              <MailIcon size={25} />
+            </a>
+            <a href={`tel:${phone}`}>
+              <PhoneIcon size={25} />
+            </a>
+          </span>
+        </div>
+        <div className="flex flex-col gap-10 lg:flex-row lg:gap-32 py-4">
+          <div className="flex flex-col gap-6 rounded-lg border p-10 w-full shadow-sm">
+            <h3 className="text-xl font-semibold">Hi there, how can we help?</h3>
+            <div className="grid w-full items-center gap-1.5">
+              <Input type="text" id="name" placeholder="Your Name" autoComplete="off" />
             </div>
             <div className="grid w-full items-center gap-1.5">
-              <Label htmlFor="email">Email</Label>
-              <Input type="email" id="email" placeholder="Email" />
-            </div>
-            <div className="grid w-full items-center gap-1.5">
-              <Label htmlFor="subject">Subject</Label>
-              <Input type="text" id="subject" placeholder="Subject" />
+              <Input type="email" id="email" placeholder="Your Email" autoComplete="off" />
             </div>
             <div className="grid w-full gap-1.5">
-              <Label htmlFor="message">Message</Label>
-              <Textarea placeholder="Type your message here." id="message" />
+              <Textarea placeholder="Ask Our About Services" id="message" />
             </div>
-            <Button className="w-full">Send Message</Button>
+            <h3 className="text-xl font-semibold">Where Did You Hear About Us?</h3>
+            <div className="grid w-full gap-1.5">
+              <RadioGroup defaultValue="option-one" className="flex flex-row items-center">
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="linkedin" id="linkedin" className="cursor-pointer" />
+                  <Label htmlFor="linkedin" className="cursor-pointer">Linkedin</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="instagram" id="instagram" />
+                  <Label htmlFor="instagram">Instagram</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="jobads" id="jobads" />
+                  <Label htmlFor="jobads">Job Ads</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="event" id="event" />
+                  <Label htmlFor="event">Event and Seminars</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="other" id="other" />
+                  <Label htmlFor="other">Other</Label>
+                </div>
+              </RadioGroup>
+            </div>
+            <Button className="w-fit bg-[#153147]">Send</Button>
+          </div>
+          <div className="w-full flex justify-end">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1994.4142722416323!2d103.795968!3d1.276258!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1b27c7a1b85f%3A0xd6085c5205635a1c!2sCoding%20Collective!5e0!3m2!1sen!2sus!4v1755783421549!5m2!1sen!2sus"
+              className="border-0 w-full h-full"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
           </div>
         </div>
       </div>

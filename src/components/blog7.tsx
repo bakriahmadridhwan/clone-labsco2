@@ -91,7 +91,7 @@ const Blog7 = ({
 }: Blog7Props) => {
   return (
     <section className="py-32 bg-[#153147]">
-      <div className="container mx-auto flex flex-col gap-2 lg:px-16">
+      <div className="container mx-auto flex flex-col gap-2 lg:px-40">
         <div className="text-left text-white">
           <h2 className={`mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl flex justify-start ${orbitron.className}`}>
             {heading}
