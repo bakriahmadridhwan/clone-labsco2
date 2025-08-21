@@ -11,10 +11,10 @@ const Hero34 = () => {
       <div className="container lg:mx-auto">
         <div className="flex lg:flex-row flex-col gap-10">
           <div className="flex flex-col items-center pt-16 px-16 text-center lg:items-end lg:text-right">
-            <h1 className={`my-6 text-pretty text-5xl font-bold lg:text-5xl ${orbitron.className}`}>
+            <h1 className={`my-6 text-pretty text-3xl font-bold lg:text-5xl ${orbitron.className}`}>
               About Us
             </h1>
-            <p className="text-accent-foreground font-medium mb-8 max-w-xl lg:text-xl">
+            <p className="text-accent-foreground font-medium mb-8 max-w-xl text-sm lg:text-xl">
               At CO2 Labs, we strive to provide simple yet powerful software solutions and expert consultation to help your business thrive in the digital world.
             </p>
             <svg

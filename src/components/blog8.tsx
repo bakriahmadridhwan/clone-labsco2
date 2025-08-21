@@ -82,7 +82,7 @@ const Blog8 = ({
 }: Blog8Props) => {
   return (
     <section className="py-32">
-      <div className="container mx-auto flex flex-col gap-2 lg:px-28">
+      <div className="container mx-auto flex flex-col gap-2 px-10 lg:px-0">
         <div className="text-left text-white">
           <h2 className={`mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl flex justify-start text-black ${orbitron.className}`}>
             {heading}
@@ -92,29 +92,29 @@ const Blog8 = ({
           {posts.map((post) => (
             <Card
               key={post.id}
-              className="grid grid-rows-[auto_auto_1fr_auto] pt-0 text-center"
+              className="grid grid-rows-[auto_auto_1fr_auto] pt-0 text-center mt-32 border-0 shadow-xl"
             >
-              <div className="flex justify-center items-center">
+              <div className="relative flex justify-center items-center">
                 <Image
                   src={post.image}
                   alt={post.title}
-                  className="flex justify-center items-center size-48 object-cover rounded-full my-4"
+                  className="absolute flex justify-center items-center size-48 object-cover rounded-full my-4 shadow-xl"
                   width={500}
                   height={500}
                 />
               </div>
-              <CardHeader>
+              <CardHeader className="mt-24">
                 <h3 className="text-lg font-semibold hover:underline md:text-xl">
                   <div className="flex flex-col">
                     {post.title}
-                    <span className="mt-2 text-[16px] text-muted-foreground">
+                    <span className="mt-2 text-[16px] text-muted-foreground font-bold">
                       {post.position}
                     </span>
                   </div>
                 </h3>
               </CardHeader>
               <CardContent>
-                <p className="text-accent-foreground">
+                <p className="text-accent-foreground -mt-2 italic font-medium">
                   {post.summary}
                 </p>
               </CardContent>
