@@ -92,7 +92,7 @@ const Blog8 = ({
           {posts.map((post) => (
             <Card
               key={post.id}
-              className="grid grid-rows-[auto_auto_1fr_auto] pt-0 text-center mt-32 border-0 shadow-xl"
+              className="grid grid-rows-[auto_auto_1fr_auto] pt-0 text-center mt-32"
             >
               <div className="relative flex justify-center items-center">
                 <Image
