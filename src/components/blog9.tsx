@@ -39,7 +39,7 @@ const Blog9 = ({
       label: "Tutorial",
       author: "Sarah Chen",
       published: "1 Jan 2024",
-      url: "#",
+      url: "https://aotc.sg/",
       image: "/labsco2/portfolio.png",
       icon: <SlidersHorizontalIcon className="size-8 text-[#153147]" />,
     },
@@ -51,7 +51,7 @@ const Blog9 = ({
       label: "Accessibility",
       author: "Marcus Rodriguez",
       published: "1 Jan 2024",
-      url: "",
+      url: "https://noshkitchen.com.sg/",
       image: "/labsco2/portfolio-1.png",
       icon: <CodeXmlIcon className="size-8 text-[#153147]" />,
     },
@@ -63,7 +63,7 @@ const Blog9 = ({
       label: "Design Systems",
       author: "Emma Thompson",
       published: "1 Jan 2024",
-      url: "",
+      url: "https://micelah.com/",
       image: "/labsco2/portfolio-2.png",
       icon: <WorkflowIcon className="size-8 text-[#153147]" />,
     },
@@ -75,7 +75,7 @@ const Blog9 = ({
       label: "Design Systems",
       author: "Emma Thompson",
       published: "1 Jan 2024",
-      url: "",
+      url: "https://pianistprodigy.com/",
       image: "/labsco2/portfolio-3.png",
       icon: <GemIcon className="size-8 text-[#153147]" />,
     },
@@ -87,7 +87,7 @@ const Blog9 = ({
       label: "Design Systems",
       author: "Emma Thompson",
       published: "1 Jan 2024",
-      url: "",
+      url: "https://octopay.asia/",
       image: "/labsco2/portfolio-4.png",
       icon: <GemIcon className="size-8 text-[#153147]" />,
     },
@@ -95,7 +95,7 @@ const Blog9 = ({
 }: Blog9Props) => {
   return (
     <section className="py-32 bg-[#153147]">
-      <div className="container mx-auto flex flex-col gap-2 lg:px-28">
+      <div className="container mx-auto flex flex-col gap-2 px-10 lg:px-0">
         <div className="text-left text-white">
           <h2 className={`mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl flex justify-start ${orbitron.className}`}>
             {heading}
@@ -105,13 +105,15 @@ const Blog9 = ({
           {posts.map((post) => (
             <div key={post.id}>
               <div className="aspect-square w-full bg-white rounded-lg">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  className="rounded-lg cursor-pointer bg-cover"
-                  width={500}
-                  height={500}
-                />
+                <a href={post.url}>
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    className="rounded-lg cursor-pointer bg-cover"
+                    width={500}
+                    height={500}
+                  />
+                </a>
               </div>
               <h2 className="text-white font-bold text-[18px] mt-3">{post.title}</h2>
             </div>
