@@ -87,11 +87,11 @@ const Feature43 = ({
   return (
     <section className="py-32">
       <div className="">
-        <div className="mb-10 md:mb-20">
-          <h2 className={`mb-2 text-center text-3xl font-semibold lg:text-5xl ${orbitron.className}`}>
+        <div className="mb-10 md:mb-20 text-center">
+          <h2 className={`mb-2 text-center text-5xl font-bold lg:text-5xl ${orbitron.className}`}>
             {heading}
           </h2>
-          <span className="text-2xl font-semibold lg:text-2xl flex justify-center">{subheading}</span>
+          <span className="text-2xl font-bold lg:text-2xl flex justify-center">{subheading}</span>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3">
           {reasons.map((reason, i) => (
@@ -102,13 +102,13 @@ const Feature43 = ({
               <Collapsible open={openIndex === i} className={reason.bg}>
                 <CollapsibleTrigger className="cursor-pointer w-full flex justify-between items-center px-8 pt-8 pb-5">
                   <div className="flex flex-col items-start">
-                    <span className="text-2xl font-black">{reason.title}</span>
-                    <span className="font-semibold">{reason.subtitle}</span>
+                    <span className="text-3xl font-black">{reason.title}</span>
+                    <span className="font-medium text-lg">{reason.subtitle}</span>
                   </div>
                 </CollapsibleTrigger>
                 <CollapsibleContent className="px-8 pb-5">
-                  <span>{reason.description}</span>
-                  <ul className="list-disc pl-5 mt-4 leading-loose">
+                  <span className="text-accent-foreground font-medium">{reason.description}</span>
+                  <ul className="list-disc pl-5 mt-4 leading-loose text-accent-foreground font-medium">
                     <li>{reason.point1}</li>
                     <li>{reason.point2}</li>
                     {reason.point3 && <li>{reason.point3}</li>}
@@ -116,7 +116,7 @@ const Feature43 = ({
                   </ul>
                 </CollapsibleContent>
                 <div className="flex justify-center pb-4">
-                  <ChevronDownIcon className={`${openIndex === i ? "rotate-180" : ""} transition-all duration-700 ease-in-out size-10`} />
+                  <ChevronDownIcon className={`${openIndex === i ? "rotate-180" : ""} transition-all duration-700 ease-in-out size-10 opacity-45`} />
                 </div>
               </Collapsible>
             </div>

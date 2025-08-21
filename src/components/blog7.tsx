@@ -91,17 +91,17 @@ const Blog7 = ({
 }: Blog7Props) => {
   return (
     <section className="py-32 bg-[#153147]">
-      <div className="container flex flex-col gap-2 px-10 lg:px-40">
+      <div className="container flex flex-col mx-auto gap-2 px-10 lg:px-10">
         <div className="text-left text-white">
           <h2 className={`mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl flex justify-start ${orbitron.className}`}>
             {heading}
           </h2>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
           {posts.map((post) => (
             <Card
               key={post.id}
-              className="grid grid-rows-[auto_auto_1fr_auto] pt-0 text-center overflow-hidden"
+              className="w-full pt-0 text-center overflow-hidden"
             >
               <div className="aspect-16/9 w-full h-32">
                 <a
