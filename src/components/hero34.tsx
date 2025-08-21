@@ -1,34 +1,29 @@
-import { ArrowRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
+
+import { Orbitron } from "next/font/google";
+
+const orbitron = Orbitron({ subsets: ["latin"] });
 
 const Hero34 = () => {
   return (
     <section id="about">
       <div className="container mx-auto">
         <div className="bg-muted grid items-center gap-8 lg:grid-cols-2">
-          <div className="flex flex-col items-center p-16 text-center lg:items-start lg:text-left">
-            <p>New Release</p>
-            <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl">
-              Welcome to Our Website
+          <div className="flex flex-col items-center p-16 text-center lg:items-end lg:text-right">
+            <h1 className={`my-6 text-pretty text-3xl font-bold lg:text-5xl ${orbitron.className}`}>
+              About Us
             </h1>
             <p className="text-muted-foreground mb-8 max-w-xl lg:text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig
-              doloremque mollitia fugiat omnis! Porro facilis quo animi
-              consequatur. Explicabo.
+              At CO2 Labs, we strive to provide simple yet powerful software solutions and expert consultation to help your business thrive in the digital world.
             </p>
-            <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-              <Button>
-                Primary
-                <ArrowRight className="size-4" />
-              </Button>
-              <Button variant="outline">Secondary</Button>
-            </div>
           </div>
-          <img
-            src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
-            alt="placeholder hero"
-            className="h-full w-full object-cover"
+          <Image
+            src="/labsco2/about-img.png"
+            alt="about us labsco2"
+            className=""
+            width={500}
+            height={500}
           />
         </div>
       </div>
