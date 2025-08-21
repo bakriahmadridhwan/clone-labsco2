@@ -34,15 +34,16 @@ const Hero1 = ({
   buttons = {
     primary: {
       text: "Get a free consult",
-      url: "#",
+      url: "https://wa.me/6581181595",
     },
   },
 }: Hero1Props) => {
   return (
-    <section className="py-32 min-h-screen flex justify-center items-center">
-      <div className="container mx-auto h-full gap-2 lg:px-28">
-        <div className="grid items-center gap-8 lg:grid-cols-2">
-          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+    <section className="py-32 h-screen flex items-center">
+      <div className="container">
+        <div className="flex flex-col-reverse gap-10 lg:flex-row justify-between lg:items-center px-10 lg:px-28">
+
+          <div className="flex flex-col text-left lg:items-start lg:text-left">
             <h1 className={`text-pretty text-3xl font-bold lg:text-5xl ${orbitron.className}`}>
               {heading}
             </h1>
@@ -60,24 +61,25 @@ const Hero1 = ({
               )}
             </div>
           </div>
-          <div className="relative flex justify-end">
-            <Image
-              src="/labsco2/heroimg.png"
-              alt="labsco2"
-              className="z-20"
-              width={500}
-              height={500}
-            />
-          </div>
-          <div>
+          <div className="">
+            <div className="relative flex justify-start lg:justify-end">
+              <Image
+                src="/labsco2/heroimg.png"
+                alt="labsco2"
+                className="z-20 w-64 lg:w-96 rounded-xl"
+                width={500}
+                height={500}
+              />
+            </div>
             <Image
               src="/labsco2/backdrop.png"
               alt="backdrop labsco2"
-              className="absolute top-1/6 right-0 z-10"
+              className="absolute w-64 lg:w-96 h-fit top-4 lg:top-1/4 right-0 z-10"
               width={500}
               height={500}
             />
           </div>
+
         </div>
       </div>
     </section>

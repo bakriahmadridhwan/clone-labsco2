@@ -58,7 +58,7 @@ const Contact2 = ({
             </div>
             <h3 className="text-xl font-semibold">Where Did You Hear About Us?</h3>
             <div className="grid w-full gap-1.5">
-              <RadioGroup defaultValue="option-one" className="flex flex-row items-center">
+              <RadioGroup defaultValue="option-one" className="flex flex-row flex-wrap items-center">
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="linkedin" id="linkedin" className="cursor-pointer" />
                   <Label htmlFor="linkedin" className="cursor-pointer">Linkedin</Label>

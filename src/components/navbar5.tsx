@@ -61,7 +61,7 @@ const Navbar5 = () => {
   return (
     <section className="py-4 text-[#153147]">
       <div className="container">
-        <nav className="flex items-center justify-between fixed top-0 left-0 w-full bg-white shadow-md z-[999] px-28 py-2">
+        <nav className="flex items-center justify-between fixed top-0 left-0 w-full bg-white shadow-md z-[999] px-10 lg:px-28 py-2">
           <a
             href="https://labsco2.com/"
             className="flex items-center gap-2"

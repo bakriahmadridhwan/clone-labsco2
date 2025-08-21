@@ -122,7 +122,7 @@ const Footer7 = ({
                     type="email"
                   />
                 </form>
-                <Button type="submit" className='cursor-pointer bg-[#EAB308] text-black font-bold rounded-r-full h-10'>Subscribe</Button>
+                <Button type="submit" className='cursor-pointer bg-[#EAB308] text-black font-bold rounded-r-full h-10 hover:bg-yellow-300'>Subscribe</Button>
               </Form>
             </div>
 
