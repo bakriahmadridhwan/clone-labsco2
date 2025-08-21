@@ -39,9 +39,9 @@ const Hero1 = ({
   },
 }: Hero1Props) => {
   return (
-    <section className="py-32 h-screen flex items-center">
+    <section className="py-32 h-screen flex justify-center items-center">
       <div className="container">
-        <div className="flex flex-col-reverse gap-10 lg:flex-row justify-between lg:items-center px-10 lg:px-28">
+        <div className="flex flex-col-reverse gap-10 lg:flex-row justify-between lg:items-center px-10 lg:px-0">
 
           <div className="flex flex-col text-left lg:items-start lg:text-left">
             <h1 className={`text-pretty text-3xl font-bold lg:text-5xl ${orbitron.className}`}>
@@ -62,7 +62,7 @@ const Hero1 = ({
             </div>
           </div>
           <div className="">
-            <div className="relative flex justify-start lg:justify-end">
+            <div className="relative flex lg:justify-end">
               <Image
                 src="/labsco2/heroimg.png"
                 alt="labsco2"
