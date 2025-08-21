@@ -1,13 +1,15 @@
-import { ArrowRight } from "lucide-react";
+import { CodeXmlIcon, SlidersHorizontalIcon, WorkflowIcon } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardFooter,
-  CardHeader,
+  CardHeader
 } from "@/components/ui/card";
+
+import { Orbitron } from "next/font/google";
+import Image from "next/image";
+
+const orbitron = Orbitron({ subsets: ["latin"] });
 
 interface Post {
   id: string;
@@ -18,6 +20,8 @@ interface Post {
   published: string;
   url: string;
   image: string;
+  icon: React.ReactNode;
+  position?: string;
 }
 
 interface Blog8Props {
@@ -30,106 +34,90 @@ interface Blog8Props {
 }
 
 const Blog8 = ({
-  tagline = "Latest Updates",
-  heading = "Blog Posts",
+  heading = "Our Team",
   description = "Discover the latest trends, tips, and best practices in modern web development. From UI components to design systems, stay updated with our expert insights.",
   buttonText = "View all articles",
-  buttonUrl = "https://shadcnblocks.com",
+  buttonUrl = "",
   posts = [
     {
-      id: "post-1",
-      title: "Getting Started with shadcn/ui Components",
+      id: "team-1",
+      title: "Jay Chen",
+      position: "CEO",
       summary:
-        "Learn how to quickly integrate and customize shadcn/ui components in your Next.js projects. We'll cover installation, theming, and best practices for building modern interfaces.",
+        "Jay began his career in the banking and finance sector, where he honed his skills and developed a deep understanding of the industry. Leveraging this foundation, he expanded into HR operations and outsourcing, successfully growing his businesses by delivering exceptional service to renowned international brands like Huawei, Coca-Cola, and GlaxoSmithKline. CO2 Labs provides a solutions based approach to champion human resource and outsourcing through strategic consultation and meticulously planned placements.",
       label: "Tutorial",
       author: "Sarah Chen",
       published: "1 Jan 2024",
-      url: "https://shadcnblocks.com",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
+      url: "#",
+      image: "/labsco2/profile1.jpeg",
+      icon: <SlidersHorizontalIcon className="size-8 text-[#153147]" />,
     },
     {
-      id: "post-2",
-      title: "Building Accessible Web Applications",
+      id: "team-2",
+      title: "Alune",
+      position: "Development Project Manager",
       summary:
-        "Explore how to create inclusive web experiences using shadcn/ui's accessible components. Discover practical tips for implementing ARIA labels, keyboard navigation, and semantic HTML.",
+        "With a background in IT software development, quality testing and web design, she brings a deep understanding of the technical and strategic aspects of project management. Known for her meticulous planning, effective communication, and ability to navigate challenges, she has consistently delivered high-quality software solutions on time and within budget. Alune excels at fostering collaboration across cross-functional teams, ensuring that projects align with client objectives and business goals. Her dedication to excellence and passion for innovation make her a driving force behind the success of every project she leads.",
       label: "Accessibility",
       author: "Marcus Rodriguez",
       published: "1 Jan 2024",
-      url: "https://shadcnblocks.com",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
+      url: "",
+      image: "/labsco2/profile2.jpeg",
+      icon: <CodeXmlIcon className="size-8 text-[#153147]" />,
     },
     {
-      id: "post-3",
-      title: "Modern Design Systems with Tailwind CSS",
+      id: "team-3",
+      title: "Ron",
+      position: "Business Development Lead",
       summary:
-        "Dive into creating scalable design systems using Tailwind CSS and shadcn/ui. Learn how to maintain consistency while building flexible and maintainable component libraries.",
+        "With a strong background in business development for finance, logistics and real estate industries, Ron has successfully led initiatives that have expanded market reach and increased revenue for both emerging and established companies. Known for his ability to identify new opportunities and forge lasting relationships, Ron excels in creating tailored solutions that meet client needs and align with business goals through thoughtful solutioning.",
       label: "Design Systems",
       author: "Emma Thompson",
       published: "1 Jan 2024",
-      url: "https://shadcnblocks.com",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
+      url: "",
+      image: "/labsco2/profile3.jpeg",
+      icon: <WorkflowIcon className="size-8 text-[#153147]" />,
     },
   ],
 }: Blog8Props) => {
   return (
     <section className="py-32">
-      <div className="container mx-auto flex flex-col items-center gap-16 lg:px-16">
-        <div className="text-center">
-          <Badge variant="secondary" className="mb-6">
-            {tagline}
-          </Badge>
-          <h2 className="mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl">
+      <div className="container mx-auto flex flex-col gap-2 lg:px-16">
+        <div className="text-left text-white">
+          <h2 className={`mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl flex justify-start text-black ${orbitron.className}`}>
             {heading}
           </h2>
-          <p className="mb-8 text-muted-foreground md:text-base lg:max-w-2xl lg:text-lg">
-            {description}
-          </p>
-          <Button variant="link" className="w-full sm:w-auto" asChild>
-            <a href={buttonUrl} target="_blank">
-              {buttonText}
-              <ArrowRight className="ml-2 size-4" />
-            </a>
-          </Button>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {posts.map((post) => (
             <Card
               key={post.id}
-              className="grid grid-rows-[auto_auto_1fr_auto] pt-0"
+              className="grid grid-rows-[auto_auto_1fr_auto] pt-0 text-center"
             >
-              <div className="aspect-16/9 w-full">
-                <a
-                  href={post.url}
-                  target="_blank"
-                  className="transition-opacity duration-200 fade-in hover:opacity-70"
-                >
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="h-full w-full object-cover object-center"
-                  />
-                </a>
+              <div className="flex justify-center items-center">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  className="flex justify-center items-center size-48 object-cover rounded-full my-4"
+                  width={500}
+                  height={500}
+                />
               </div>
               <CardHeader>
                 <h3 className="text-lg font-semibold hover:underline md:text-xl">
-                  <a href={post.url} target="_blank">
+                  <div className="flex flex-col">
                     {post.title}
-                  </a>
+                    <span className="mt-2 text-[16px] text-muted-foreground">
+                      {post.position}
+                    </span>
+                  </div>
                 </h3>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">{post.summary}</p>
+                <p className="text-accent-foreground">
+                  {post.summary}
+                </p>
               </CardContent>
-              <CardFooter>
-                <a
-                  href={post.url}
-                  target="_blank"
-                  className="flex items-center text-foreground hover:underline"
-                >
-                  Read more
-                  <ArrowRight className="ml-2 size-4" />
-                </a>
-              </CardFooter>
             </Card>
           ))}
         </div>

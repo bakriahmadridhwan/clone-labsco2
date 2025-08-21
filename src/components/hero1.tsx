@@ -49,7 +49,7 @@ const Hero1 = ({
             <h1 className={`my-6 text-pretty text-3xl font-bold lg:text-5xl ${orbitron.className}`}>
               <span className="bg-[#153147] text-white "><span className="opacity-0">..</span>{subheading}<span className="opacity-0">..</span></span>
             </h1>
-            <p className="text-muted-foreground mb-8 max-w-xl lg:text-xl">
+            <p className="text-accent-foreground mb-8 max-w-xl lg:text-xl">
               {description}
             </p>
             <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">

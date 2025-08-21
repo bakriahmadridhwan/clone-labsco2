@@ -14,7 +14,7 @@ const Hero34 = () => {
             <h1 className={`my-6 text-pretty text-3xl font-bold lg:text-5xl ${orbitron.className}`}>
               About Us
             </h1>
-            <p className="text-muted-foreground mb-8 max-w-xl lg:text-xl">
+            <p className="text-accent-foreground mb-8 max-w-xl lg:text-xl">
               At CO2 Labs, we strive to provide simple yet powerful software solutions and expert consultation to help your business thrive in the digital world.
             </p>
           </div>

@@ -120,7 +120,7 @@ const Blog7 = ({
                 </h3>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
+                <p className="text-accent-foreground">
                   {post.summary.length > 50
                     ? post.summary.slice(0, 100) + "..."
                     : post.summary}
