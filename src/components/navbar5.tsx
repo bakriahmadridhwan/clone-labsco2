@@ -143,7 +143,7 @@ const Navbar5 = () => {
                 <MenuIcon className="size-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="max-h-screen overflow-auto">
+            <SheetContent side="left" className="max-h-screen overflow-auto z-[9999]">
               <SheetHeader>
                 <SheetTitle>
                   {""}
