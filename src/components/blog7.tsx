@@ -91,7 +91,7 @@ const Blog7 = ({
 }: Blog7Props) => {
   return (
     <section className="py-32 bg-[#153147]">
-      <div className="container mx-auto flex flex-col gap-2 lg:px-40">
+      <div className="container flex flex-col gap-2 px-10 lg:px-40">
         <div className="text-left text-white">
           <h2 className={`mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl flex justify-start ${orbitron.className}`}>
             {heading}
@@ -101,26 +101,29 @@ const Blog7 = ({
           {posts.map((post) => (
             <Card
               key={post.id}
-              className="grid grid-rows-[auto_auto_1fr_auto] pt-0 text-center"
+              className="grid grid-rows-[auto_auto_1fr_auto] pt-0 text-center overflow-hidden"
             >
-              <div className="aspect-16/9 w-full">
+              <div className="aspect-16/9 w-full h-32">
                 <a
                   href={post.url}
-                  target="_blank"
                   className="transition-opacity duration-200 fade-in hover:opacity-70"
                 >
-                  <span className="flex justify-center items-center h-full w-full">{post.icon}</span>
+                  <span className="flex justify-center items-center h-full w-full">
+                    <span className="aspect-square bg-[#EFF1F1] size-20 flex justify-center items-center rounded-full">
+                      {post.icon}
+                    </span>
+                  </span>
                 </a>
               </div>
               <CardHeader>
                 <h3 className="text-lg font-semibold hover:underline md:text-xl">
-                  <a href={post.url} target="_blank">
+                  <a href={post.url} className="font-bold">
                     {post.title}
                   </a>
                 </h3>
               </CardHeader>
               <CardContent>
-                <p className="text-accent-foreground">
+                <p className="text-accent-foreground font-medium">
                   {post.summary.length > 50
                     ? post.summary.slice(0, 100) + "..."
                     : post.summary}
@@ -129,7 +132,6 @@ const Blog7 = ({
               <CardFooter className="flex justify-center">
                 <a
                   href={post.url}
-                  target="_blank"
                   className="flex items-center text-foreground underline font-bold"
                 >
                   View More
