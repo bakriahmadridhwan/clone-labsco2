@@ -105,11 +105,11 @@ const Blog9 = ({
           {posts.map((post) => (
             <div key={post.id}>
               <div className="aspect-square w-full bg-white rounded-lg">
-                <a href={post.url}>
+                <a href={post.url} className="rounded-lg block overflow-hidden">
                   <Image
                     src={post.image}
                     alt={post.title}
-                    className="rounded-lg cursor-pointer bg-cover"
+                    className="rounded-lg cursor-pointer bg-cover hover:scale-110 ease-in-out duration-300"
                     width={500}
                     height={500}
                   />

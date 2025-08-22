@@ -55,7 +55,7 @@ const Hero1 = ({
             </p>
             <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
               {buttons.primary && (
-                <Button asChild className="w-fit lg:w-full sm:w-auto bg-[#153147]">
+                <Button asChild className="w-fit lg:w-fit bg-[#153147]">
                   <a href={buttons.primary.url}>{buttons.primary.text}</a>
                 </Button>
               )}
