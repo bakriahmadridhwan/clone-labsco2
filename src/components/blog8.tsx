@@ -82,7 +82,7 @@ const Blog8 = ({
 }: Blog8Props) => {
   return (
     <section className="py-32">
-      <div className="container mx-auto flex flex-col gap-2 px-10 lg:px-0">
+      <div className="container mx-auto flex flex-col gap-2 px-10 lg:px-28">
         <div className="text-left text-white">
           <h2 className={`mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl flex justify-start text-black ${orbitron.className}`}>
             {heading}

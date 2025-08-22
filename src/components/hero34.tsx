@@ -9,7 +9,7 @@ const Hero34 = () => {
   return (
     <section id="about">
       <div className="container lg:mx-auto">
-        <div className="flex lg:flex-row flex-col gap-10">
+        <div className="flex lg:flex-row flex-col gap-10 lg:px-28">
           <div className="flex flex-col items-center pt-16 px-16 text-center lg:items-end lg:text-right">
             <h1 className={`my-6 text-pretty text-3xl font-bold lg:text-5xl ${orbitron.className}`}>
               About Us
