@@ -7,11 +7,23 @@ import {
 import { INITIAL_SUBSCRIPTION_FORM } from "@/constants/auth-constant";
 import { SubscribeForm, subscribeSchema } from "@/validations/auth-validation";
 import { zodResolver } from '@hookform/resolvers/zod';
-import React from "react";
+import React, { useState } from "react";
 // import { useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Button } from './ui/button';
-import { useForm } from 'react-hook-form';
+
+import {
+  AlertDialog,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger
+} from "@/components/ui/alert-dialog";
+import { BadgeCheckIcon } from 'lucide-react';
 
 interface Footer7Props {
   logo?: {
@@ -97,8 +109,12 @@ const Footer7 = ({
     defaultValues: INITIAL_SUBSCRIPTION_FORM,
   });
 
+  const [isDialogOpen, setIsDialogOpen] = useState(false); // State for dialog visibility
+  const [formData, setFormData] = useState<SubscribeForm | null>(null); // State for form data
+
   const onSubmit = form.handleSubmit(async (data) => {
-    console.log(data);
+    setFormData(data); // Set the form data
+    setIsDialogOpen(true); // Open the dialog
   });
 
   return (
@@ -112,20 +128,38 @@ const Footer7 = ({
               <h2 className="text-xl font-semibold text-white mt-2">{description}</h2>
             </div>
 
-            <div className='flex items-center'>
+            <div className=''>
               <Form {...form}>
-                <form onSubmit={onSubmit} className="">
+                <form onSubmit={onSubmit} className="flex">
                   <FormInput
                     form={form}
                     name="email"
                     placeholder="Insert email here"
                     type="email"
                   />
+                  <Button type="submit" className='cursor-pointer bg-[#EAB308] text-black font-bold rounded-r-full h-11 hover:bg-yellow-300'>Subscribe</Button>
                 </form>
-                <Button type="submit" className='cursor-pointer bg-[#EAB308] text-black font-bold rounded-r-full h-10 hover:bg-yellow-300'>Subscribe</Button>
               </Form>
-            </div>
 
+              <AlertDialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                <AlertDialogTrigger />
+                <AlertDialogContent className='w-[400px]'>
+                  <AlertDialogHeader className='my-6'>
+                    <AlertDialogTitle className="text-center text-2xl font-bold">{" "}</AlertDialogTitle>
+                    <div className="flex justify-center mt-4">
+                      <BadgeCheckIcon className="size-24 text-green-400" />
+                    </div>
+                    <AlertDialogDescription className="flex flex-col gap-4 text-center text-xl font-bold text-black my-6">
+                      Thank you for Subscribing
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel className="bg-[#153147] text-white mt-4 flex justify-center w-fit mx-auto hover:bg-slate-900 cursor-pointer hover:text-white">Close</AlertDialogCancel>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
+
+            </div>
           </div>
           <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
             {sections.map((section, sectionIdx) => (

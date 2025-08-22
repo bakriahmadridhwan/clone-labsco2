@@ -9,7 +9,7 @@ import {
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 
-export default function FormInput<T extends FieldValues>({
+export default function ContactInput<T extends FieldValues>({
   form,
   name,
   label,
@@ -43,7 +43,7 @@ export default function FormInput<T extends FieldValues>({
                 type={type}
                 placeholder={placeholder}
                 autoComplete="off"
-                className='bg-white rounded-l-full h-11 lg:w-72'
+                className="h-11"
               />
             )}
           </FormControl>
