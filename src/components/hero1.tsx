@@ -74,7 +74,7 @@ const Hero1 = ({
             <Image
               src="/labsco2/backdrop.png"
               alt="backdrop labsco2"
-              className="absolute w-64 lg:w-96 h-fit top-30 lg:top-1/4 right-0 z-10"
+              className="absolute w-64 lg:w-96 h-fit top-25 lg:top-1/4 right-0 z-10"
               width={500}
               height={500}
             />
