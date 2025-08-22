@@ -176,13 +176,13 @@ const Navbar5 = () => {
                       </Button>
                     </a>
                   </span>
-                  <a href="#" className="font-medium">
+                  <a href="#about" className="font-medium">
                     About Us
                   </a>
-                  <a href="#" className="font-medium">
+                  <a href="#portfolio" className="font-medium">
                     Portfolio
                   </a>
-                  <a href="#" className="font-medium">
+                  <a href="#contact" className="font-medium">
                     Contact Us
                   </a>
                 </div>
