@@ -26,7 +26,7 @@ const Contact2 = ({
   web = { label: "label", url: "#" },
 }: Contact2Props) => {
   return (
-    <section className="py-32">
+    <section className="py-32" id="contact">
       <div className="container mx-auto flex flex-col gap-2 px-10 lg:px-0">
         <div className="flex flex-wrap gap-4 justify-between items-center">
           <h2 className={`mt-5 text-3xl font-semibold text-pretty md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl text-black ${orbitron.className}`}>

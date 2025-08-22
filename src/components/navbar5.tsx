@@ -109,7 +109,7 @@ const Navbar5 = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  href="#"
+                  href="#about"
                   className={navigationMenuTriggerStyle()}
                 >
                   <span className="text-[16px]">About Us</span>
@@ -117,7 +117,7 @@ const Navbar5 = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  href="#"
+                  href="#portfolio"
                   className={navigationMenuTriggerStyle()}
                 >
                   <span className="text-[16px]">Portfolio</span>
@@ -125,7 +125,7 @@ const Navbar5 = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  href="#"
+                  href="#contact"
                   className={navigationMenuTriggerStyle()}
                 >
                   <span className="text-[16px]">Contact</span>
