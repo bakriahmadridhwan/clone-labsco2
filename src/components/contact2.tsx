@@ -133,14 +133,14 @@ const Contact2 = ({
             <AlertDialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <AlertDialogTrigger />
               <AlertDialogContent>
-                <AlertDialogHeader>
+                <AlertDialogHeader className="py-4">
                   <AlertDialogTitle className="text-center text-2xl font-bold">Thank you for asking</AlertDialogTitle>
                   <div className="flex justify-center mt-4 bg-[#D0D6DA] p-3 rounded-lg mx-auto aspect-square w-fit h-fit">
                     <MailIcon className="size-8 text-[#153147]" />
                   </div>
                   <AlertDialogDescription className="flex flex-col gap-4">
                     <span className="text-center text-xl text-accent-foreground font-medium"><span>Hi {" "}</span><span className="font-bold">{formData?.name},</span></span>
-                    <span className="text-center text-xl text-accent-foreground font-medium">Thank you for leaving your contact details with CO2 Labs! We all be in touch soon with more information. If you have any questions, feel free to reach out to us! Best regards.</span>
+                    <span className="text-center text-xl text-accent-foreground font-medium mx-5">Thank you for leaving your contact details with CO2 Labs! We all be in touch soon with more information. If you have any questions, feel free to reach out to us! Best regards.</span>
 
                     <span className="text-center text-xl text-accent-foreground font-medium mt-2">The CO2 Collective</span>
                   </AlertDialogDescription>
