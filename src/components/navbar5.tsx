@@ -135,7 +135,7 @@ const Navbar5 = () => {
           </NavigationMenu>
           <div className="hidden items-center gap-4 lg:flex">
             {/* <Button variant="outline">Sign in</Button> */}
-            <Button className="bg-[#153147] text-[16px]">Get Started Today!</Button>
+            <Button className="bg-[#153147] text-[16px] cursor-pointer hover:bg-slate-700"><a href="https://labsco2.com/">Get Started Today!</a></Button>
           </div>
           <Sheet>
             <SheetTrigger asChild className="lg:hidden">
@@ -188,7 +188,7 @@ const Navbar5 = () => {
                 </div>
                 <div className="mt-6 flex flex-col gap-4">
                   {/* <Button variant="outline">Sign in</Button> */}
-                  <Button className="bg-[#153147] text-[16px]">Get Started Today!</Button>
+                  <Button className="bg-[#153147] text-[16px]"><a href="https://labsco2.com/" className="cursor-pointer">Get Started Today!</a></Button>
                 </div>
               </div>
             </SheetContent>

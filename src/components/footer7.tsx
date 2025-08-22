@@ -71,9 +71,9 @@ const defaultSections = [
   {
     title: "Contact",
     links: [
-      { name: "+65-8118-1595", href: "#" },
-      { name: "info@co2labs.com", href: "#" },
-      { name: "100D Pasir Panjang Road", href: "#" },
+      { name: "+65-8118-1595", href: "https://wa.me/6581181595" },
+      { name: "info@co2labs.com", href: "https://labsco2.com/" },
+      { name: "100D Pasir Panjang Road", href: "https://maps.app.goo.gl/9jtBTtuRuc4XGttL7" },
     ],
   },
 ];
@@ -184,7 +184,7 @@ const Footer7 = ({
           <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
             {legalLinks.map((link, idx) => (
               <li key={idx} className="hover:text-primary">
-                <a href={link.href}> {link.name}</a>
+                <a href={link.href} className='hover:text-white'> {link.name}</a>
               </li>
             ))}
           </ul>
