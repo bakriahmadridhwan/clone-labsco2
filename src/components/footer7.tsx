@@ -103,7 +103,7 @@ const Footer7 = ({
 
   return (
     <section className="pt-32 bg-[#141516]">
-      <div className="px-28">
+      <div className="px-10 lg:px-28">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
             {/* Logo */}
