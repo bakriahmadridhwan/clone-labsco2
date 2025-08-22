@@ -103,7 +103,7 @@ const Blog7 = ({
               key={post.id}
               className="w-full pt-0 text-center overflow-hidden"
             >
-              <div className="aspect-16/9 w-full h-40">
+              <div className="aspect-16/9 w-full h-48">
                 <a
                   href={post.url}
                   className="transition-opacity duration-200 fade-in hover:opacity-70"
