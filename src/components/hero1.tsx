@@ -40,7 +40,7 @@ const Hero1 = ({
 }: Hero1Props) => {
   return (
     <section className="py-32 h-screen flex justify-center items-center">
-      <div className="container">
+      <div className="w-full">
         <div className="flex flex-col-reverse gap-10 lg:flex-row justify-between lg:items-center px-10 lg:px-28">
 
           <div className="flex flex-col text-left lg:items-start lg:text-left">
@@ -55,7 +55,7 @@ const Hero1 = ({
             </p>
             <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
               {buttons.primary && (
-                <Button asChild className="w-fit lg:w-fit bg-[#153147]">
+                <Button asChild className="w-fit lg:w-fit bg-[#153147] hover:bg-slate-800">
                   <a href={buttons.primary.url}>{buttons.primary.text}</a>
                 </Button>
               )}
@@ -74,7 +74,7 @@ const Hero1 = ({
             <Image
               src="/labsco2/backdrop.png"
               alt="backdrop labsco2"
-              className="absolute w-64 lg:w-96 h-fit top-25 lg:top-1/4 right-0 z-10"
+              className="absolute w-64 lg:w-96 h-fit top-25 lg:top-1/5 right-0 z-10"
               width={500}
               height={500}
             />

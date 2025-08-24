@@ -95,13 +95,13 @@ const Blog9 = ({
 }: Blog9Props) => {
   return (
     <section className="py-32 bg-[#153147]" id="portfolio">
-      <div className="container mx-auto flex flex-col gap-2 px-10 lg:px-28">
+      <div className="w-full mx-auto flex flex-col gap-2 px-10 lg:px-28">
         <div className="text-left text-white">
           <h2 className={`mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl flex justify-start ${orbitron.className}`}>
             {heading}
           </h2>
         </div>
-        <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-5 lg:gap-8">
+        <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-5 lg:gap-10">
           {posts.map((post) => (
             <div key={post.id}>
               <div className="aspect-square w-full bg-white rounded-lg">
